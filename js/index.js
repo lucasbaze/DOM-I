@@ -74,6 +74,8 @@ let navMenu = document.querySelector('nav');
 
 let pricing = document.createElement('a');
 pricing.textContent = 'Pricing';
+pricing.href = 'https://facebook.com';
+pricing.setAttribute('target', '_blank');
 
 let stories = document.createElement('a');
 stories.textContent = 'Stories';
@@ -179,7 +181,17 @@ contactSection.forEach(element => {
 let footer = document.querySelector('footer p:only-child');
 footer.textContent = siteContent.footer.copyright;
 
-//Animations
+//Event Listeners
 ctaButton.addEventListener('click', function() {
     this.classList.toggle('greenBg');
+});
+
+let body = document.querySelector('body');
+
+window.addEventListener('load', e => {
+    console.log('page loaded');
+});
+
+window.addEventListener('scroll', function(e) {
+    console.log(window.scrollY);
 });
